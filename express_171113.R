@@ -1,4 +1,4 @@
-setwd("c:/work/PJT_acorn_express")
+setwd("./express")
 
 #install.packages("plyr")
 library(plyr)
@@ -66,7 +66,7 @@ popu2033_outlier<-subset(popu2033, popu2033$outlierdong==TRUE )
 
 #subway<-read.csv(file.choose(), header = T, stringsAsFactors = T, fileEncoding = "UTF-8")
 subway<-read.csv(file.choose(), header = T, stringsAsFactors = F, sep="\t")
-subway<-read.csv(file=".//PJT_acorn//subway_stName_raw.csv", header = T, stringsAsFactors = F, sep="\t")
+subway<-read.csv(file=".//subway_stName_raw.csv", header = T, stringsAsFactors = F, sep="\t")
 
 
 subway<-read.csv(file="./CARD_SUBWAY_MONTH_201709_a.csv", fileEncoding = "EUC-kr")
@@ -243,7 +243,7 @@ ClusterHotspot<-na.omit(ClusterHotspot) #168개
 
 ###########################
 #가까운 정류장 합쳐서 보정된 데이터로 이상치 찾기 
-#ClusterHotspot<-read.csv(file="./PJT_acorn/ClusterHotspot.csv")
+#ClusterHotspot<-read.csv(file="./ClusterHotspot.csv")
 
 boxplot(cluster_OnOff$CluGetSum)
 
@@ -258,7 +258,4 @@ CluOutlier<-subset(cluster_OnOff, cluster_OnOff$Outlier==TRUE )
 #cpDist<- read.csv(file.choose())
 cpDist<- read.csv(file="./distance_C_P.csv")  
 str(cpDist) ; head(cpDist, 10)
-
-
-
 
